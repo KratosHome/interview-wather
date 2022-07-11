@@ -25,7 +25,7 @@ const SearchLocation = () => {
             <button
                 className="buttonSearchLocation"
             >
-                Search
+                Searc
             </button>
 
         </form>
