@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {useSelector} from "react-redux/es/hooks/useSelector";
 import "./WeatherPage.css"
 import updateImg from "../../img/update.png";
