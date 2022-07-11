@@ -1,0 +1,39 @@
+.containerWeathersItem{
+    display: flex;
+    justify-content: space-around;
+
+}
+.containerWeatherItem{
+    margin: 2rem;
+    text-align: center;
+    border: 1px solid black;
+    width: 150px;
+    border-radius: 10px;
+}
+.deleteWeatherItem{
+    margin-left: 118px;
+    margin-top: -139px;
+    position: absolute;
+    padding-top: 6px;
+    border: 1px solid #a1a1a1;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #8ec1fc;
+    transition: 300ms;
+}
+.deleteWeatherItem:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+.imgWeatherItem{
+    margin-left: -73px;
+    margin-top: -137px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+.imgWeatherItem:hover{
+    cursor: pointer;
+}

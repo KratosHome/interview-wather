@@ -1,0 +1,11 @@
+.containerWeatherPage {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.imgWeatherPage {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
