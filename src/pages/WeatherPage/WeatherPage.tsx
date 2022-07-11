@@ -34,7 +34,7 @@ const WeatherPage = () => {
                         alt={updateImg}
                     />
                     <div>{item.name}</div>
-                    <div>{item.main.temp}K</div>
+                    <div>{item.main.temp} K</div>
                     {item.weather.map((it: any) =>
                         <div key={it.id}>
                             <div>{it.main}</div>
@@ -42,7 +42,7 @@ const WeatherPage = () => {
                         </div>
                     )}
                     <div>{item.main.humidity}волгоість</div>
-                    <div>{item.clouds.all}%хмарність</div>
+                    <div>{item.clouds.all}% хмарність</div>
                     <div>{item.visibility}видимість</div>
                 </div>
             )}

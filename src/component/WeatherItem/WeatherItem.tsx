@@ -36,7 +36,7 @@ const WeatherItem = () => {
                             </div>
                         )}
                         <div>{item.main.humidity}волгоість</div>
-                        <div>{item.clouds.all}%хмарність</div>
+                        <div>{item.clouds.all}% хмарність</div>
                     </Link>
                     <div
                         className="deleteWeatherItem"
