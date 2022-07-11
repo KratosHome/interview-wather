@@ -13,15 +13,14 @@ const WeatherItem = () => {
         return state.getWeatherReducer
     })
     const dispatch = useDispatch<any>()
-    const deleteClick = (e: React.MouseEvent<HTMLDivElement>, id: any) => {
+    const deleteClick = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
         e.preventDefault();
         dispatch(deleteWeather(id))
     }
-    const updateClick = (e: React.MouseEvent<HTMLDivElement>, id: any) => {
+    const updateClick = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
         e.preventDefault();
         dispatch(fetchWeather(id))
     }
-
     return (
         <div className="containerWeathersItem">
             {getWeatherReducer.loading ? <Loader/> : null}

@@ -7,7 +7,7 @@ const SearchLocation = () => {
     const [location, setLocation] = useState("")
     const dispatch = useDispatch<any>()
 
-    const onSubmit = ((e: any) => {
+    const onSubmit = ((e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         dispatch(fetchWeather(location))
     });

@@ -18,7 +18,7 @@ const WeatherPage = () => {
         (item: any) => item.name === pageId.id
     );
 
-    const updateClick = (e: React.MouseEvent<HTMLDivElement>, id: any) => {
+    const updateClick = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
         e.preventDefault();
         dispatch(fetchWeather(id))
     }
