@@ -1,13 +1,14 @@
 import React from 'react';
-import { useParams} from "react-router-dom";
-import {useSelector} from "react-redux/es/hooks/useSelector";
+import {useParams} from "react-router-dom";
+import {useSelector} from "react-redux";
 import "./WeatherPage.css"
 import updateImg from "../../img/update.png";
-import {fetchWeather} from "../../store/reducer/getWeather";
-import {useDispatch} from "react-redux/es/hooks/useDispatch";
-import Loader from "../../component/Loader/Loader";
+import {fetchWeather} from "../../store";
+import {useDispatch} from "react-redux";
+import {Loader} from "../../component";
+import {WeatherTypes} from '../../GlobalTypes';
 
-const WeatherPage = () => {
+export const WeatherPage = () => {
     const dispatch = useDispatch<any>()
     const getWeatherReducer = useSelector((state: any) => {
         return state.getWeatherReducer
@@ -25,7 +26,7 @@ const WeatherPage = () => {
     return (
         <div className="containerWeatherPage">
             {getWeatherReducer.loading ? <Loader/> : null}
-            {getProductInProduct.map((item: any) =>
+            {getProductInProduct.map((item: WeatherTypes) =>
                 <div key={item.id}>
                     <img
                         onClick={(e) => updateClick(e, item.name)}
@@ -49,5 +50,3 @@ const WeatherPage = () => {
         </div>
     );
 };
-
-export default WeatherPage;

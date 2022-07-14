@@ -1,19 +1,20 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux/es/hooks/useSelector";
+import {useSelector} from "react-redux";
 import "./WeatherItem.css"
-import {useDispatch} from "react-redux/es/hooks/useDispatch";
-import {deleteWeather, fetchWeather,} from '../../store/reducer/getWeather';
+import {useDispatch} from "react-redux";
+import {deleteWeather, fetchWeather} from '../../store';
 import updateImg from "../../img/update.png"
-import Loader from "../Loader/Loader";
+import {Loader} from "../Loader";
+import { WeatherTypes } from '../../GlobalTypes';
 
-const WeatherItem = () => {
+export const WeatherItem = () => {
 
     const getWeatherReducer = useSelector((state: any) => {
         return state.getWeatherReducer
     })
     const dispatch = useDispatch<any>()
-    const deleteClick = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
+    const deleteClick = (e: React.MouseEvent<HTMLDivElement>, id: number) => {
         e.preventDefault();
         dispatch(deleteWeather(id))
     }
@@ -24,9 +25,13 @@ const WeatherItem = () => {
     return (
         <div className="containerWeathersItem">
             {getWeatherReducer.loading ? <Loader/> : null}
-            {getWeatherReducer.weather.map((item: any) =>
-                <div key={item.id} className="containerWeatherItem">
-                    <Link key={item.id} to={item.name}>
+            {getWeatherReducer.weather.map((item: WeatherTypes) =>
+                <div
+                    data-testid="WeatherItem-test"
+                    key={item.id}
+                    className="containerWeatherItem"
+                >
+                    <Link to={item.name}>
                         <div>{item.name}</div>
                         <div>{item.main.temp}K</div>
                         {item.weather.map((it: any) =>
@@ -54,5 +59,3 @@ const WeatherItem = () => {
         </div>
     );
 };
-
-export default WeatherItem;

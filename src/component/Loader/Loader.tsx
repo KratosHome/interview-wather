@@ -1,14 +1,14 @@
 import React from 'react';
 import "./Loader.css"
 
-const Loader = () => {
+export const Loader = () => {
     return (
-        <div className="lds-facebook">
+        <div
+            data-testid="Loader-test"
+            className="lds-facebook">
             <div></div>
             <div></div>
             <div></div>
         </div>
     );
 };
-
-export default Loader;

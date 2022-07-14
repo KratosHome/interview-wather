@@ -1,14 +1,15 @@
 import React from 'react';
-import WeatherItem from "../../component/WeatherItem/WeatherItem";
-import SearchLocation from "../../component/SearchLocation/SearchLocation";
+import { WeatherItem } from '../../component';
+import {SearchLocation} from "../../component";
 
-const MainPage = () => {
+export const MainPage = () => {
     return (
-        <>
+        <div
+            data-testid="main-page"
+        >
             <SearchLocation/>
             <WeatherItem/>
-        </>
+        </div>
     );
 };
 
-export default MainPage;

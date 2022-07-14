@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {useDispatch} from "react-redux/es/hooks/useDispatch";
-import {fetchWeather} from "../../store/reducer/getWeather";
+import {useDispatch} from "react-redux";
+import {fetchWeather} from "../../store";
 import "./SearchLocation.css"
 
-const SearchLocation = () => {
+export const SearchLocation = () => {
     const [location, setLocation] = useState("")
     const dispatch = useDispatch<any>()
 
@@ -16,6 +16,7 @@ const SearchLocation = () => {
     return (
         <form onSubmit={onSubmit} className="containerSearchLocation">
             <input
+                data-testid="input-link"
                 className="inputSearchLocation"
                 value={location}
                 type="text"
@@ -23,6 +24,7 @@ const SearchLocation = () => {
                 onChange={(e) => setLocation(e.target.value)}
             />
             <button
+                data-testid="button-search"
                 className="buttonSearchLocation"
             >
                 Search
@@ -31,5 +33,3 @@ const SearchLocation = () => {
         </form>
     );
 };
-
-export default SearchLocation;

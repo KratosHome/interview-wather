@@ -1,5 +1,5 @@
-import MainPage from "../pages/MainPage/MainPage";
-import WeatherPage from "../pages/WeatherPage/WeatherPage";
+import {MainPage} from "../pages";
+import {WeatherPage} from "../pages";
 
 
 export const ProviderRouter: any[] = [
